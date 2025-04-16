@@ -47,13 +47,15 @@ Launch two blank EC2 instance running Ubuntu Server: 22.04 - t2.micro - sg with 
 - Update and Upgrade
 
 ### Extra commands
-- Copying files
+- Copying files :
+```
 sudo ansible web -m ansible.builtin.copy -a "src=/home/ubuntu/.ssh/tech503-brian-aws-key.pem dest=/home/ubuntu/.ssh/tech503-brian-aws-key.pem"
-
-- Install and Restart Nginx
+```
+- Install and Restart Nginx :
+```
 ansible all -m ansible.builtin.apt -a "name=nginx state=present" -become
 ansible all -m service -a "name=nginx state=restarted" -become
-
+```
 ## Config Ansible
 - In etc/ansible/ansible.cfg
 - Changing the interpreter (removing pink text)
