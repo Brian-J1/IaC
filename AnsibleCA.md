@@ -60,6 +60,8 @@ ansible all -m service -a "name=nginx state=restarted" -become
 - In etc/ansible/ansible.cfg
 - Changing the interpreter (removing pink text)
 - Removing need to confirm "Known Hosts" in command line
+```
 [defaults]
 host_key_checking = False
 interpreter_python = auto_silent
+```
